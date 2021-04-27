@@ -13,8 +13,6 @@ const CommentPage = () => {
 
     const [comments, setComments] = useState( []);
 
-    const [warning, setWarning] = useState(false)
-
 
     useEffect(() => {
         (async () => {
@@ -32,34 +30,17 @@ const CommentPage = () => {
         })();
     })
 
-    const addNewComment = (newEmail, newComment, newGender) => {
-        if(newComment !== '' && newEmail !=='' && newGender !==''){
-            warning && setWarning(false);
-
-            setComments([...comments, {
-                id: uuidv4(),
-                email: newEmail,
-                gender: newGender,
-                comment: newComment
-            }])
-        }else{
-            setWarning(true)
-        }
-    }
-
-    const warningMsg = warning && <Alert color="danger" className="m-3">Veuillez compléter les champs</Alert>
 
 
     return(
         <div>
-            {warningMsg}
 
-            <AddComment addNewComment = {addNewComment}></AddComment>
+            <AddComment></AddComment>
 
             {comments.map( (comment, index) => (
             <Card className="card mt-2 mb-2 p-2" key={index}>
               <div>
-                  <p>{comment.id}</p>
+                  <p>{comment.email}</p>
                   <p>{comment.gender}</p>
               </div>
                 <hr/>
