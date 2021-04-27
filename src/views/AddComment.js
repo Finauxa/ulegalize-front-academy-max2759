@@ -3,25 +3,11 @@ import {createComment} from '../services/CommentService';
 import { Card, CardBody, Button, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 import CommentDTO from '../model/CommentDTO';
 
-const AddComment= ({addNewComment}) => {
+const AddComment= () => {
 
-
-    //const [addComment, setAddComment] = useState('')
-    //
-    //const [addEmail, setAddEmail] = useState('')
-    //
-    //const [addGender,setAddGender] = useState('')
 
     const [comment, setComment] = useState( new CommentDTO());
 
-
-    //const handleForm = (e) => {
-    //    e.preventDefault();
-    //    addNewComment(addEmail, addComment,addGender);
-    //    setAddComment('');
-    //    setAddEmail('');
-    //    setAddGender('');
-    //}
 
     const saveComment = async () =>{
 
